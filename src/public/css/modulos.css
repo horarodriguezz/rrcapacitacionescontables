@@ -1,0 +1,51 @@
+body {
+  background-color: rgba(120, 111, 166, 1);
+  overflow-x: hidden;
+}
+
+.navbar {
+  box-shadow: 2px 2px 5px black;
+}
+
+.card {
+  box-shadow: 2px 2px 5px black;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background-color: rgba(120, 111, 166, 1);
+  color: white;
+}
+
+.list-group-item:hover {
+  background-color: rgba(120, 111, 166, 1);
+  color: white;
+  animation-name: color;
+  animation-duration: 0.2s;
+}
+.animate {
+  animation-duration: 0.38s;
+  animation-fill-mode: both;
+  animation-name: slideInUp;
+}
+
+@keyframes color {
+  from {
+    background-color: white;
+    color: black;
+  }
+  to {
+    background-color: rgba(120, 111, 166, 1);
+    color: white;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}

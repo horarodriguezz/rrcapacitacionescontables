@@ -1,0 +1,26 @@
+body {
+  overflow-x: hidden;
+}
+
+.navbar {
+  box-shadow: 2px 2px 5px gray;
+}
+
+.header {
+  background: url(../img/persona-escribiendo-portatil-sobre-mesa-madera_1253-241.jpg);
+  background-size: cover;
+  min-height: 400px;
+}
+.background-overlay {
+  background-color: rgba(120, 111, 166, 0.8);
+}
+
+.somos {
+  background: url(../img/preguntas.jpg);
+  background-size: cover;
+  min-height: 400px;
+}
+
+.modulo {
+  box-shadow: 2px 2px 5px gray;
+}
