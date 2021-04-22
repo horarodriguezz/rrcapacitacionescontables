@@ -27,7 +27,7 @@ router.post("/send-email",(req, res, next)=>{
     
     const mailOptions = {
         from: "Capacitaciones Contables",
-        to: "hora.rodriguezz@gmail.com",
+        to: process.env.MAIL_TO,
         subject: "Mensaje del sitio web",
         text: contentHTML
     }
