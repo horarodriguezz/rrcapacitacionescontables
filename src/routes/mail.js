@@ -1,10 +1,9 @@
-const path = require("path");
 const { Router } = require("express");
 const router = Router();
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
-router.post("/send-email",(req, res)=>{
+router.post("/send-email",(req, res, next)=>{
     const {nombre, apellido, email, msj} = req.body;
 
     contentHTML = `
@@ -41,9 +40,12 @@ router.post("/send-email",(req, res)=>{
         
     })
 
-    res.redirect("back");
-    res.end();
-    
+    next();
+
+},(req, res, next)=>{
+    res.render("index");
+    return req.flash("mailSendedMessage","El mensaje ha sido enviado.");
+
 });
 
 

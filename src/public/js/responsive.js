@@ -180,7 +180,7 @@ const scont = `<h3 class="mx-auto mb-4 text-center">Ofrecemos un entrenamiento i
 const bigc = `<div class="background-overlay">
 <div class="container">
     <div class="row pt-5">
-        <h1 class="text-center">¿Quienes somos?</h1>
+        <h1 class="text-center mb-5">¿Quienes somos?</h1>
         <div class="col-md-6 my-5 d-flex justify-content-center align-items-center">                     
             <figure class="figure">
                 <img src="img/Esteban.jpg" class="figure-img img-fluid rounded-3 shadow-lg">
@@ -276,9 +276,17 @@ const capacitaciones = ()=>{
     }
 }
 
-const qs = ()=>{
+const qs = async ()=>{
     let mql = w.matchMedia("(min-width: 992px)");
     
+    await checkQS(mql);
+
+    d.getElementById("quienes-somos").classList.add("somos");
+
+
+}
+
+function checkQS(mql){
     if(mql.matches){
         d.getElementById("quienes-somos").innerHTML = bigc;
     }
@@ -286,9 +294,7 @@ const qs = ()=>{
         d.getElementById("quienes-somos").innerHTML = smc;
     }
 
-
 }
-
 
 d.addEventListener("DOMContentLoaded", capacitaciones);
 w.addEventListener("resize", capacitaciones);

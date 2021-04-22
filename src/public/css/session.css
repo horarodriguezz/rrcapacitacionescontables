@@ -1,0 +1,104 @@
+body {
+  overflow: hidden;
+}
+
+.head {
+  box-shadow: 2px 0px 10px #718093;
+}
+.side-bar {
+  background-color: #353b48;
+  min-width: 250px;
+  min-height: 100vh;
+  box-shadow: 2px 0px 10px #718093;
+}
+.side-bar .nav-item i {
+  margin-left: 1.5rem;
+}
+
+#sidebar .nav-item:hover {
+  background-color: #2f3640;
+  cursor: pointer;
+}
+
+#out:hover {
+  background-color: #2f3640;
+  cursor: pointer;
+}
+
+#dropdown {
+  background-color: #2f3640;
+}
+
+#dropdown li:hover {
+  background-color: #353b48;
+  cursor: pointer;
+}
+
+#navtabs {
+  background-color: #353b48;
+  box-shadow: 2px 0px 10px #718093;
+}
+
+span {
+  font-family: Roboto, sans-serif;
+}
+
+#content {
+  overflow-y: auto;
+  height: 100vh;
+}
+
+#mod1 .shadow {
+  background-color: #353b48;
+}
+
+#mod1lg .shadow {
+  background-color: #353b48;
+}
+
+#chat-box {
+  overflow-y: scroll;
+}
+
+.card {
+  box-shadow: 0px 2px 5px rgba(113, 128, 147, 0.8);
+}
+.msjAdmin {
+  background-color: #2ed573;
+}
+.msj {
+  background-color: rgb(236, 240, 241);
+}
+.w-45 {
+  width: 45%;
+}
+
+.active {
+  background-color: #2f3640;
+}
+
+@media (max-width: 768px) {
+  #content {
+    padding-bottom: 4.5rem;
+  }
+
+  .w-45 {
+    width: 75%;
+  }
+}
+
+.animate {
+  animation-duration: 0.38s;
+  animation-fill-mode: both;
+  animation-name: slideInUp;
+}
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 10px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
