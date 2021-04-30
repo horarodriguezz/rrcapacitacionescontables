@@ -8,7 +8,8 @@ let db = require("../libs/db_conn");
 const user = new mongoose.Schema({
     user: {type: String, required: true, unique: true},
     pass: {type: String, required: true},
-    modulos: {type: String},
+    modulos: [],
+    grupos: [],
     nombre: {type: String},
     apellido: {type: String}
 });

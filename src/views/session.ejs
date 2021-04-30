@@ -30,25 +30,20 @@
                     <i class="far fa-user selector"></i><span class="ms-3 fs-5">Módulos</span><i class="fas fa-caret-down me-auto"></i>
                 </li>
                 <ul id="dropdown" class="list-unstyled collapse">
-                    <% if(user.modulos == "1"){ %>
-                        <li class="p-4 fs-5 ini"><i class="fas fa-book me-3"></i>Inicial</li>
-                    <% } %>
-                    <% if (user.modulos == "2") { %>
-                        <li class="p-4 fs-5 ini"><i class="fas fa-book me-3"></i>Inicial</li>
-                        <li class="p-4 fs-5 avan"><i class="fas fa-graduation-cap me-2"></i>Avanzado</li>
-                    <% } %>
-                    <% if (user.modulos == "3") { %>
-                        <li class="p-4 fs-5 ini"><i class="fas fa-book me-3"></i>Inicial</li>
-                        <li class="p-4 fs-5 avan"><i class="fas fa-graduation-cap me-2"></i>Avanzado</li>
-                        <li class="p-4 fs-5 cont"><i class="fas fa-calculator me-3"></i>Contabilidad</li>
-                    <% } %>
-                    <% if (user.modulos == "4") { %>
-                        <li class="p-4 fs-5 ini"><i class="fas fa-book me-3"></i>Inicial</li>
-                        <li class="p-4 fs-5 avan"><i class="fas fa-graduation-cap me-2"></i>Avanzado</li>
-                        <li class="p-4 fs-5 cont"><i class="fas fa-calculator me-3"></i>Contabilidad</li>
-                        <li class="p-4 fs-5 sueldos"><i class="fas fa-file-invoice-dollar me-3"></i>Sueldos</li> 
-                    <% } %>
-                    
+                    <% for( let i = 0; i < user.modulos.length; i++ ) { %>
+                        <% if (user.modulos[i] == "inicial") { %>
+                            <li class="p-4 fs-5 ini"><i class="fas fa-book me-3"></i>Inicial</li>
+                        <% } %>
+                        <% if (user.modulos[i] == "avanzado") { %>
+                            <li class="p-4 fs-5 avan"><i class="fas fa-graduation-cap me-2"></i>Avanzado</li>
+                        <% } %>
+                        <% if (user.modulos[i] == "contabilidad") { %>
+                            <li class="p-4 fs-5 cont"><i class="fas fa-calculator me-3"></i>Contabilidad</li>
+                        <% } %>
+                        <% if (user.modulos[i] == "sueldos") { %>
+                            <li class="p-4 fs-5 sueldos"><i class="fas fa-file-invoice-dollar me-3"></i>Sueldos</li> 
+                        <% } %>
+                    <% } %>                   
                 </ul>
             </ul>
             <div id="out" class="nav-item py-3">
@@ -73,11 +68,11 @@
 
         <!-- CONTENIDO ADAPTABLE -->
         <div class="w-100">
-            <div id="content" style="overflow-x: hidden;">
+            <div id="content">
                 <!-- Pagina principal -->
                 <div id="contenidoLg" class="animate">   
                     <div class="p-2 head">
-                        <h2 class="ms-5 mt-3">Bienvenido <%=user.nombre%>! </h2>
+                        <h2 class="ms-5 mt-3">Bienvenido/a <%=user.nombre%> <%= user.apellido %>  </h2>
                     </div>   
                     <div class="container mt-3">
                         <div class="row">
@@ -85,16 +80,7 @@
                                 <div class="card">
                                     <div class="card-header"><h3 class="text-center ">Te damos la bienvenida a RR Capacitaciones Contables!</h3></div>
                                     <div class="card-body">
-                                        <p class="fs-6 lh-base">
-                                            Mi nombre es Esteban Rodriguez, soy Contador Público y amo la
-                                            profesión. He dictado cursos en la Universidad de Buenos Aires y otras
-                                            instituciones educativas. Me apasiona compartir el conocimiento. <strong>Más se
-                                            comparte, más se multiplica, más alto es el nivel de lo que hacemos.</strong> <br> <br>
-                                            He trabajado con muchos jóvenes estudiantes de económicas. Yo
-                                            también lo fui alguna vez y sé lo que significa. Es por esto que junto a la Cdora. Yesica Bolaño diseñamos estos cursos
-                                            específicamente para vos. Si, para vos!
-                                            <strong> Sabes realmente qué es lo que hace un Contador en un Estudio? </strong><br> <br>
-                                            Tomate unos segundos para imaginarlo antes de seguir leyendo… <br> <br>
+                                        <p class="fs-6 lh-lg">
                                             Una vez que termines el curso completo y la instrucción que vamos a darte,
                                             vas a ser un asistente de Contador <strong>útil y productivo.</strong> Vas a conocer cómo
                                             funciona un Estudio Contable, los tiempos que se manejan, todas las tareas
@@ -103,11 +89,6 @@
                                             que hacer. Vas a asumir responsabilidad y compromiso. Y lo mejor de todo, es
                                             que no vas a aprender qué botón tocar o donde hacer click; <strong>te voy a enseñar a
                                             comprender lo que hacemos.</strong><br> <br>
-                                            Este curso esta pensado como el curso que me hubiera gustado que me
-                                            dieran hace más de 20 años, cuando mandaba mis CV en papel por correo y
-                                            nadie me daba la oportunidad porque no tenía experiencia. Les entrego mucho
-                                            de lo que aprendí en mis comienzos, para ser hoy lo que pretendo de un
-                                            colaborador. <br> <br>
                                             Hay muchísimo más por aprender, pero eso se va a ir dando con el
                                             tiempo y a medida que avancen en sus carreras. Este curso te va a abrir la
                                             mente, y te va a preparar para encontrar tu lugar, donde vas a demostrar todo
@@ -144,28 +125,45 @@
                         </div>
                     </div>
                 </div>
-                
+                <!-- Lista de grupos -->
+                <div id="roomsMobile" class="d-none animate h-100 d-flex justify-content-center align-items-center">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Ingreso al chat</h3>
+                        </div>
+                        <div class="card-body p-5">
+                            <form action="/chatroom" method="POST" class="d-flex row" id="selectForm">
+                                <div class="col-md-12 text-end">
+                                    <select name="room" class="form-select form-select-lg mb-3" aria-label="rooms">
+                                        <option selected>Selecciona un grupo.</option>
+                                        <% for( let i = 0; i < user.grupos.length; i++ ) { %>
+                                            <option value="" id="room"><%= user.grupos[i] %> </option>
+                                        <% } %>
+                                    </select>
+                                    <button type="submit" class="btn btn-outline-dark mt-3">Ingresar</button>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <!-- Dropdown del sidebar -->
                 <div id="dropdownMobile" class="d-none animate">
                     <h3 class="p-3 border-bottom border-2 shadow-sm">Selecciona un Módulo</h3>
                     <ul class="list-unstyled">
-                        <% if(user.modulos == "1"){ %>
-                            <li class="p-4 fs-4 ini"><i class="fas fa-book me-3"></i>Inicial</li>
-                        <% } %>
-                        <% if (user.modulos == "2") { %>
-                            <li class="p-4 fs-4 ini"><i class="fas fa-book me-3"></i>Inicial</li>
-                            <li class="p-4 fs-4 avan"><i class="fas fa-graduation-cap me-2"></i>Avanzado</li>
-                        <% } %>
-                        <% if (user.modulos == "3") { %>
-                            <li class="p-4 fs-4 ini"><i class="fas fa-book me-3"></i>Inicial</li>
-                            <li class="p-4 fs-4 avan"><i class="fas fa-graduation-cap me-2"></i>Avanzado</li>
-                            <li class="p-4 fs-4 cont"><i class="fas fa-calculator me-3"></i>Contabilidad</li>
-                        <% } %>
-                        <% if (user.modulos == "4") { %>
-                            <li class="p-4 fs-4 ini shadow-sm"><i class="fas fa-book me-3"></i>Inicial</li>
-                            <li class="p-4 fs-4 avan shadow-sm"><i class="fas fa-graduation-cap me-2"></i>Avanzado</li>
-                            <li class="p-4 fs-4 cont shadow-sm"><i class="fas fa-calculator me-3"></i>Contabilidad</li>
-                            <li class="p-4 fs-4 sueldos shadow-sm"><i class="fas fa-file-invoice-dollar me-3"></i>Sueldos</li> 
+                        <% for( let i = 0; i < user.modulos.length; i++ ) { %>
+                            <% if(user.modulos[i] == "inicial"){ %>
+                                <li class="p-4 fs-4 ini"><i class="fas fa-book me-3"></i>Inicial</li>
+                            <% } %>
+                            <% if(user.modulos[i] == "avanzado"){ %>
+                                 <li class="p-4 fs-4 avan"><i class="fas fa-graduation-cap me-2"></i>Avanzado</li>
+                            <% } %> 
+                            <% if(user.modulos[i] == "contabilidad"){%>
+                                <li class="p-4 fs-4 cont"><i class="fas fa-calculator me-3"></i>Contabilidad</li>
+                            <% } %> 
+                            <% if(user.modulos[i] == "sueldos"){%>
+                                <li class="p-4 fs-4 sueldos shadow-sm"><i class="fas fa-file-invoice-dollar me-3"></i>Sueldos</li>
+                            <% } %>  
                         <% } %>
                     </ul>
                     <div class="d-block text-center p-3 m-5">
@@ -257,30 +255,14 @@
                 <div id="modx" class="d-none d-flex justify-content-center align-items-center animate">
                     <img src="/img/proximamente.png" alt="proximamente.png" width="650" class="img-fluid">
                 </div>
-                <!-- Chat -->
-                <div id="chat" class="d-none h-100 animate">
-                    <div class="card h-100">
-                        <div class="card-header shadow-sm">
-                            <h5 class="px-2 pt-2 m-0">RR Capacitaciones Contables</h5>
-                            <p id="user" class="px-2 text-muted m-0"><%= user.nombre %> <%= user.apellido %>  </p>
-                        </div>
-                        <div class="card-body p-1" id="chat-box"></div>
-                        <form class="card-footer" id="messageForm">
-                            <div class="input-group">
-                                <input type="text" name="message" placeholder="Escribe un mensaje..." class="form-control border border-dark" id="message">
-                                <button type="submit" class="btn btn-dark" id="chat-send">Enviar</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                                                                                              
+
             </div>
         </div>
     </div>
     
     
 
-    <!-- SOCKETIO -->
-    <script src="/socket.io/socket.io.js"></script>
     <!-- SCRIPTS BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <!-- SCRIPTS FONTAWESOME -->

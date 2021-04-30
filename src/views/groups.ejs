@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>RR Capacitaciones Contables | Grupos</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- FONT AWESOME -->
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="css/groups.css">
+</head>
+<body>
+    <div class="animate">
+        <div class="row content justify-content-center">
+            <div class="card col-md-4" id="contenido">
+                <form action="/addgroup" method="POST">
+                    <h4 class="my-2">Crea un nuevo grupo:</h4>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="grupo" placeholder="Inserta el nombre del grupo">
+                        <button class="btn btn-outline-dark" type="submit">Crear</button>
+                    </div>
+                </form>
+                <% if (groupMessage.length > 0) { %>
+                    <p class="alert alert-info"><%= groupMessage %> </p>
+                <% } %>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="card col-md-6 p-3">
+                <h4 class="my-3">Grupos creados actualmente:</h4>
+                <% for( let i = 0; i < groups.length; i++ ) { %>
+                    <ul class="list-group list-group-horizontal my-1">
+                        <li class="list-group-item flex-grow-1"> <%= groups[i].grupo %> </li>
+                        <li class="list-group-item"><i class="far fa-trash-alt text-danger delete"></i></li>
+                    </ul>
+                <% } %>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/433de9bf63.js" crossorigin="anonymous"></script>
+    <script>
+        const btnDelete = document.querySelectorAll(".delete");
+        
+        btnDelete.forEach(btn => {
+            btn.addEventListener("click",()=>{
+                const grupo = btn.parentElement.previousElementSibling.innerText;
+                const options = {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({grupo: grupo})
+                };
+                fetch("/removegroup", options);
+
+                btn.parentElement.parentElement.remove();
+            });
+        });
+
+    </script>
+</body>
+</html>

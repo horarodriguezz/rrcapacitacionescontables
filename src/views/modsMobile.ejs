@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Capacitaciones Contables | Modulos</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- ESTILOS PROPIOS -->
+    <link rel="stylesheet" href="css/modulos.css">
+    <!-- SCROLL REVEAL -->
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+</head>
+<body>
+    <div class="animate">
+         <!-- NAVBAR -->
+        <nav class = "navbar navbar-expand-lg navbar-light fixed-top" style= "background-color: rgba(250, 250, 250, 1);">
+            <div class="container">
+                <a href="/" class="navbar-brand"><img src="img/logo esteban.PNG" style="height: 50px;"></a>
+                <a href="/" class="navbar-brand"><img src="img/logo yesica.PNG" style="height: 50px;"></a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="./#home" class="nav-link" id="hb"><i class="fas fa-home"></i> Inicio</a></li>
+                        <li class="nav-item"><a href="./#quienes-somos" class="nav-link" id="qsb"><i class="far fa-question-circle"></i> Quienes Somos</a></li>
+                        <li class="nav-item"><a href="./#contacto" class="nav-link" id="fb"><i class="fas fa-phone"></i> Contacto</a></li>
+                        <li class="nav-item"><a href="/login" class="nav-link"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- MÓDULOS -->
+        <section id="modulos">
+            <div class="container">
+                <h1 class="display-3 text-center mt-4">Conoce nuestros módulos:</h1>
+                <div class="card mt-4">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <h5><i class="fas fa-book fs-2 px-3"></i>Módulo 1: Asistente Contable Inicial</h5>
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush w-100">
+                                    <li class="list-group-item"><strong> Persona</strong> - Definición de persona humana y jurídica.</li>
+                                    <li class="list-group-item"><strong>2. Sujetos responsables por deuda propia.</strong></li>
+                                    <li class="list-group-item"><strong>3. Tributos </strong>- Conceptos de recaudación, organismos recaudadores, tipos y ejemplos.</li>
+                                    <li class="list-group-item" data-bs-toggle="collapse" href="#Contribuyente" role="button" aria-expanded="false" aria-controls="Contribuyente"><div class="d-flex"><strong class="flex-grow-1">4. Contribuyente</strong><i class="fas fa-caret-down fs-4"></i></div></li>
+                                    <div class="collapse" id="Contribuyente">
+                                        <ul>
+                                            <li>Definición e identificación (CUIT).</li>
+                                            <li>Clave Fiscal.</li>
+                                            <li>Tipos de contribuyente.
+                                                <ul>
+                                                    <li>Monotributistas.</li>
+                                                    <li>Responsables Inscriptos</li>
+                                                    <li>Consumidores Finales.</li>
+                                                    <li>Exentos.</li>
+                                                    <li>Agentes de recaudación.</li>
+                                                </ul>
+                                            </li>
+                                            
+                                        </ul>
+                                    </div>
+                                    <li class="list-group-item" data-bs-toggle="collapse" href="#Periodo" role="button" aria-expanded="false" aria-controls="Periodo"><div class="d-flex"><strong class="flex-grow-1">5. Periodo Fiscal.</strong><i class="fas fa-caret-down fs-4"></i></div></li>
+                                    <div id="Periodo" class="collapse">
+                                        <ul>
+                                            <li>Definición de año fiscal.</li>
+                                            <li>Diferencias entre personas humanas y jurídicas.</li>
+                                        </ul>
+                                    </div>
+                                    <li class="list-group-item"><strong>6. Caracterización de un contribuyente.</strong></li>
+                                    <li class="list-group-item" data-bs-toggle="collapse" href="#Obli" role="button" aria-expanded="false" aria-controls="Obli"><div class="d-flex"><strong class="flex-grow-1">7. Obligaciones mensuales / anuales de los contribuyentes.</strong><i class="fas fa-caret-down fs-4"></i></div></li>
+                                    <div id="Obli" class="collapse">
+                                        <ul>
+                                            <li>Monotributistas.</li>
+                                            <li>Régimen general.</li>
+                                            <li>Agentes de recaudación.</li>
+                                        </ul>
+                                    </div>
+                                    <li class="list-group-item"><strong>8. Calendarios de vencimiento.</strong></li>
+                                    <li class="list-group-item" data-bs-toggle="collapse" href="#docu" role="button" aria-expanded="false" aria-controls="docu"><div class="d-flex"><strong class="flex-grow-1">9. Documentación de respaldo de operaciones.</strong><i class="fas fa-caret-down fs-4"></i></div></li>
+                                    <div id="docu" class="collapse">
+                                        <ul>
+                                            <li>Tipos de operaciones, comprobantes a emitir, Sistemas de Emision de comprobantes.</li>
+                                            <li>Factura electrónica y datos que debe tener.</li>
+                                            <li>Tipos de facturas: A, A con Leyenda, M, B, C. Requisitos.</li>
+                                            <li>Ejemplos de emisiones.</li>
+                                            <li>Facturas manuales.</li>
+                                            <li>Ticket - Controlador Fiscal.</li>
+                                            <li>Resúmenes bancarios.</li>
+                                            <li>Resumen de Tarjeta de crédito.</li>
+                                            <li>Certificados de retención de IVA y Seg. Social (SIRE).</li>
+                                            <li>Certificados de retención Ganancias (SICORE).</li>
+                                            <li>Certificados de retención IIBB</li>
+                                        </ul>
+                                    </div>
+                                    <li class="list-group-item" data-bs-toggle="collapse" href="#emision" role="button" aria-expanded="false" aria-controls="emision"><div class="d-flex"><strong class="flex-grow-1">10. Emisión de una factura electrónica.</strong><i class="fas fa-caret-down fs-4"></i></div></li>
+                                    <div id="emision" class="collapse">
+                                        <ul>
+                                            <li>Comprobantes en linea.</li>
+                                            <li>App.</li>
+                                            <li>Tutoriales.</li>
+                                        </ul>
+                                    </div>
+                                    <li class="list-group-item" data-bs-toggle="collapse" href="#contenido" role="button" aria-expanded="false" aria-controls="contenido"><div class="d-flex"><strong class="flex-grow-1">11. Contenido de un comprobante y su implicancia.</strong><i class="fas fa-caret-down fs-4"></i></div></li>
+                                    <div id="contenido" class="collapse">
+                                        <ul>
+                                            <li>Concepto facturado (Tipos de activos, tipos de gastos).</li>
+                                            <li>Jurisdicción de atribución.</li>
+                                            <li>Validez del comprobante.</li>
+                                        </ul>
+                                    </div>
+                                    <li class="list-group-item" data-bs-toggle="collapse" href="#sistema" role="button" aria-expanded="false" aria-controls="sistema"><div class="d-flex"><strong class="flex-grow-1">12. Conociendo un Sistema Informático Contable - Practica en Estudio Contable</strong><i class="fas fa-caret-down fs-4"></i></div></li>
+                                    <div id="sistema" class="collapse">
+                                        <ul>
+                                            <li>Carga de un comprobante Factura (Clientes y proveedores).</li>
+                                            <li>Carga de retenciones.</li>
+                                            <li>Carga de Extracto bancario.</li>
+                                            <li>Carga de liquidación de Tarjeta de Crédito.</li>
+                                            <li>Emisión de Subdiarios de Compras y Ventas.</li>
+                                        </ul>
+                                    </div>
+                                    <li class="list-group-item" data-bs-toggle="collapse" href="#final" role="button" aria-expanded="false" aria-controls="final"><div class="d-flex"><strong class="flex-grow-1">13. Final del módulo.</strong><i class="fas fa-caret-down fs-4"></i></div></li>
+                                    <div id="final" class="collapse">
+                                        <ul>
+                                            <li>Finalidad y utilidad de la documentación preparada para el Contador.</li>
+                                            <li>Introducción a la liquidación de IVA e IIBB.</li>
+                                        </ul>
+                                    </div>
+                                    <li class="list-group-item"><strong>14. PRACTICA REAL EN ESTUDIO CONTABLE.</strong></li>
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <h5><i class="fas fa-graduation-cap fs-2 px-3"></i>Módulo 2: Asistente Contable Avanzado</h5>
+                            </button>
+                          </h2>
+                          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush w-100">
+                                    <li class="list-group-item"><strong> Solicitud de Clave Fiscal / Blanqueo</strong></li>
+                                    <li class="list-group-item"><strong>2. Solicitud de CUIT</strong></li>
+                                    <li class="list-group-item"><strong>3. Información previa al alta de un Contribuyente</strong></li>
+                                    <li class="list-group-item"><strong>4. R.U.T. (Registro Único Tributario)</strong></li>
+                                    <li class="list-group-item"><strong>5. Alta de contribuyente Monotributista.</strong></li>
+                                    <li class="list-group-item"><strong>6. Alta de Contribuyente de Régimen General.</strong></li>
+                                    <li class="list-group-item"><strong>7. Solicitud de autorización para emitir comprobantes + CAI + Puntos de Venta.</strong></li>
+                                    <li class="list-group-item"><strong>8. Controladores Fiscales.</strong></li>
+                                    <li class="list-group-item"><strong>9. Implementación de Factura electrónica.</strong></li>
+                                    <li class="list-group-item"><strong>10. Regímenes de Ingresos Brutos.</strong></li>
+                                    <li class="list-group-item"><strong>11. Alta IIBB</strong></li>
+                                    <li class="list-group-item"><strong>12. Consulta de Códigos Fiscales / Alícuotas.</strong></li>
+                                    <li class="list-group-item"><strong>13. Carga de un contribuyente en Sistema Contable y configuración de parámetros.</strong></li>
+                                    <li class="list-group-item"><strong>14. Conceptos teóricos en la liquidación de IIBB e IVA.</strong></li>
+                                    <li class="list-group-item"><strong>15. Emisión de papeles de trabajo en Sistema Contable.</strong></li>
+                                    <li class="list-group-item"><strong>16. Liquidación de Impuestos mensuales y confección del Régimen de Información.</strong></li>
+                                    <li class="list-group-item"><strong>17. Formas de pago de Obligaciones.</strong></li>
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                  <h5><i class="fas fa-calculator fs-2 px-3"></i>Módulo 3: Contabilidad</h5>
+                              </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                  <li class="list-group-item"><strong>Próximamente</strong></li>
+                              </div>
+                            </div>
+                        </div>  
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <h5><i class="fas fa-file-invoice-dollar fs-2 px-3"></i>Módulo 4: Sueldos</h5>
+                            </button>
+                          </h2>
+                          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush w-100">
+                                    <li class="list-group-item"><strong> La ley de contrato de trabajo.</strong></li>
+                                    <li class="list-group-item"><strong>2. Convenios Colectivos de Trabajo.</strong></li>
+                                    <li class="list-group-item"><strong>3. Liquidación a mano de un sueldo.</strong></li>
+                                    <li class="list-group-item"><strong>4. Liquidación de sueldos en Catedral Software.</strong></li>
+                                    <li class="list-group-item"><strong>5. Papeles de trabajo de Cargas Sociales.</strong></li>
+                                    <li class="list-group-item"><strong>6. Liquidación de cargas sociales.</strong></li>
+                                    <li class="list-group-item"><strong>7. Liquidación de cargas sindicales.</strong></li>
+                                </ul>
+                            </div>
+                          </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section>
+        <!-- CONOCER MAS -->
+        <footer>
+            <div class="container text-center">
+                <h2 class="my-4">No pierdas mas tiempo! Contactate con nosotros</h2>
+                <button class="btn btn-outline-dark btn-lg mb-5" onclick="location.href='/#contacto'">Quiero saber más</button>
+            </div>
+        </footer>
+    </div>
+   
+    
+    <!-- BOOTSTRAP SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- SCRIPTS FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/433de9bf63.js" crossorigin="anonymous"></script>
+</body>
+</html>

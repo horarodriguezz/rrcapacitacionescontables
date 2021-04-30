@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>RR Capacitaciones Contables | Chat</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- CSS PROPIO -->
+    <link rel="stylesheet" href="/css/chatroom.css">
+</head>
+<body>
+    <div id="goBack">
+        <i class="far fa-arrow-alt-circle-left fs-1" id="arrowBack"></i><p>Volver</p>
+    </div>
+
+    <div id="content" class="animate d-flex justify-content-center align-items-center">
+        <div class="card">
+            <div class="card-header shadow-sm">
+                <h5 class="px-2 pt-2 m-0">RR Capacitaciones Contables</h5>
+                <p id="user" class="px-2 m-0"><%= user.user %>  </p>
+                <p id="room" class="px-2 m-0"><%= room %>  </p>
+            </div>
+            <div class="card-body p-1" id="chat-box"></div>
+            <form class="card-footer" id="messageForm">
+                <div class="input-group">
+                    <input type="text" name="message" placeholder="Escribe un mensaje..." class="form-control border border-dark" id="message">
+                    <button type="submit" class="btn btn-dark" id="chat-send">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    
+    
+    <!-- SOCKETIO -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- SCRIPTS BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <!-- SCRIPTS FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/433de9bf63.js" crossorigin="anonymous"></script>
+    <!-- SCRIPTS PROPIOS -->
+    <script src="/js/chatroom.js"></script>
+</body>
+</html>

@@ -40,14 +40,37 @@
                                     <input type="password" name="pass" id="pass" class="form-control" placeholder="Contraseña" required>
                                     <label for="pass">Contraseña</label>
                                 </div>
-                                <select class="form-select mt-3" name="modulos" id="modulos">
-                                        <option selected>Modulos</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                </select>
-                                
+                                <div class="text-start mt-3">
+                                    <p class="mb-0">Modulos:</p>
+                                    <div class="form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="modulos" value="inicial" id="inicial">
+                                        <label class="form-check-label" for="inicial">
+                                            Inicial
+                                        </label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="modulos" value="avanzado" id="avanzado">
+                                        <label class="form-check-label" for="avanzado">
+                                            Avanzado
+                                        </label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="modulos" value="contabilidad" id="contabilidad">
+                                        <label class="form-check-label" for="contabilidad">
+                                            Contabilidad
+                                        </label>
+                                    </div>
+                                    <div class="form-check-inline">
+                                        <input class="form-check-input" type="checkbox" name="modulos" value="sueldos" id="sueldos">
+                                        <label class="form-check-label" for="sueldos">
+                                            Sueldos
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="mt-3 text-start" id="usergroups">
+                                    <p class="mb-0">Grupos:</p>
+
+                                </div>
                                 <div class="d-flex justify-content-center mt-4">
                                     <input type="submit" value="Crear usuario" class="btn btn-outline-dark btn-lg">
                                 </div>
@@ -71,20 +94,24 @@
     <script src="https://kit.fontawesome.com/433de9bf63.js" crossorigin="anonymous"></script>
     <!-- SCRIPT PROPIO -->
     <script>
-        const d = document, w = window;
-        const mql = w.matchMedia("(min-width:1360px)");
+        document.addEventListener("DOMContentLoaded", async ()=>{
+            let grupos = await fetch("/getgroups").then(res => res.json()).catch(err => console.log(err));
+            console.log(grupos);
 
-        const resp = function(){
-            if(!mql.matches){
-                d.querySelector(".login").classList.replace("col-md-4", "col-md-6");
-            }
-            else{
-                d.querySelector(".login").classList.replace("col-md-6", "col-md-4");
-            }
-        }
+            const usergroups = document.getElementById("usergroups");
 
-        d.addEventListener("DOMContentLoaded", resp);
-        w.addEventListener("resize",resp);
+            for (let i = 0; i < grupos.length; i++) {
+                let formdiv = document.createElement("div");
+                formdiv.classList.add("form-check");
+                formdiv.innerHTML = `
+                <input class="form-check-input" type="checkbox" name="grupos" value="${grupos[i].grupo}">
+                <label class="form-check-label" for="${grupos[i].grupo}">
+                    ${grupos[i].grupo}
+                </label>`;
+
+                usergroups.appendChild(formdiv);
+            }
+        });
     </script>
 </body>
 </html>

@@ -44,6 +44,9 @@ window.addEventListener("resize", ()=>{
         app.classList.add("d-flex");
         navtabs.classList.add("d-none");
         sidebar.classList.remove("d-none");
+        dropdownMobile.classList.add("d-none");
+        modsMobile.classList.remove("active");
+        modulos.classList.remove("active");
 
         contenidoLg.children[0].classList.remove("d-none");
 
@@ -56,6 +59,9 @@ window.addEventListener("resize", ()=>{
         app.classList.add("d-flex");
         navtabs.classList.add("d-none");
         sidebar.classList.remove("d-none");
+        dropdownMobile.classList.add("d-none");
+        modsMobile.classList.remove("active");
+        modulos.classList.remove("active");
 
         contenidoLg.children[0].classList.remove("d-none");
 

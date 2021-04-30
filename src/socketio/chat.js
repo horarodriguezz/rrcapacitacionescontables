@@ -1,22 +1,45 @@
 const messageModel = require("../model/chatdb");
+const rooms = require("../model/rooms");
+const moment = require("moment");
+
+
 
 module.exports = function(io){
-    io.on("connection", async socket =>{
-        console.log("Nuevo usuario conectado.")
+    io.on("connection", async (socket) =>{
 
-        let oldMessages = await messageModel.find({});
-        socket.emit("load old messages", oldMessages)
+        socket.on("joinRoom", async (data) =>{
+            const userjoin = new rooms();
+            userjoin.id = socket.id;
+            userjoin.user = data.user;
+            userjoin.room = data.room;
 
-        socket.on("send message", async (data)=>{
+            await userjoin.save();
+
+            socket.join(userjoin.room);
+
+            const oldMessages = await messageModel.find({room: userjoin.room});
+
+            socket.emit("load old messages", oldMessages);
+
+            socket.emit("userJoin",{user: "RR Capacitaciones Contables Bot", message:`Te has unido a la sala de ${userjoin.room}`, fecha: moment().format("HH:MM A") });
+        });
+
+        socket.on("sendMessage",async(data)=>{
+            const session = await rooms.findOne({id: socket.id});
             const newMessage = new messageModel();
+
             newMessage.user = data.user;
             newMessage.message = data.message;
-            newMessage.fecha = data.fecha;
+            newMessage.room = session.room;
+            newMessage.fecha = moment().format("HH:MM A");
 
             await newMessage.save();
 
-            io.emit("new message", data);
+            io.to(session.room).emit("newMessage",data);
+        });
+
+        socket.on("disconnect",async ()=>{
+            await rooms.findOneAndDelete({id: socket.id});
         });
     });
-
 }

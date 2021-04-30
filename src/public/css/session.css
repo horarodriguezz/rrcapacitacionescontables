@@ -24,7 +24,14 @@ body {
   background-color: #2f3640;
   cursor: pointer;
 }
+#rooms {
+  background-color: #2f3640;
+}
 
+#rooms li:hover {
+  background-color: #353b48;
+  cursor: pointer;
+}
 #dropdown {
   background-color: #2f3640;
 }
@@ -37,6 +44,12 @@ body {
 #navtabs {
   background-color: #353b48;
   box-shadow: 2px 0px 10px #718093;
+}
+
+#contenidoLg .card-header {
+  background-color: #353b48;
+  color: #fff;
+  box-shadow: 0px 2px 5px rgb(113 128 147 / 80%);
 }
 
 span {
@@ -56,25 +69,17 @@ span {
   background-color: #353b48;
 }
 
-#chat-box {
-  overflow-y: scroll;
-}
-
-.card {
-  box-shadow: 0px 2px 5px rgba(113, 128, 147, 0.8);
-}
-.msjAdmin {
-  background-color: #2ed573;
-}
-.msj {
-  background-color: rgb(236, 240, 241);
-}
-.w-45 {
-  width: 45%;
+.room:hover {
+  background-color: #e2f1f1;
+  cursor: pointer;
 }
 
 .active {
   background-color: #2f3640;
+}
+
+#roomsMobile .card {
+  width: 50%;
 }
 
 @media (max-width: 768px) {
@@ -82,8 +87,8 @@ span {
     padding-bottom: 4.5rem;
   }
 
-  .w-45 {
-    width: 75%;
+  #roomsMobile .card {
+    width: 100%;
   }
 }
 

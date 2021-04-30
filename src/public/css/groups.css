@@ -1,0 +1,12 @@
+.content {
+  border-top: 155px solid #8c7ae6;
+}
+
+#contenido {
+  position: relative;
+  top: -61px;
+}
+
+.list-group-item i:hover {
+  cursor: pointer;
+}

@@ -1,5 +1,8 @@
 const d = document, w = window;
 
+
+
+
 //Elementos del DOM
 //Home
 const homeMobile = d.getElementById("homeMobile");
@@ -8,11 +11,9 @@ const contenido = d.getElementById("contenido");
 //Chat
 const forum = d.getElementById("forum");
 const forumMobile = d.getElementById("forumMobile");
-const chat = d.getElementById("chat");
-const chatBox = d.getElementById("chat-box");
-const messageForm = d.getElementById("messageForm");
-const message = d.getElementById("message");
-let user = d.getElementById("user");
+const roomsMobile = d.getElementById("roomsMobile");
+const selectForm = d.getElementById("selectForm");
+const rooms = d.querySelectorAll("#room")
 //Modulos
     //Botones de los navs
     const modulos = d.getElementById("modulos");
@@ -34,9 +35,6 @@ const out = d.getElementById("out");
 const outMobile = d.getElementById("outMobile");
 
 
-
-
-
 //seccion Home
 homeMobile.addEventListener("click", ()=>{
     modsMobile.classList.remove("active");
@@ -49,9 +47,11 @@ homeMobile.addEventListener("click", ()=>{
 
     contenidoLg.classList.remove("d-none");
     dropdownMobile.classList.add("d-none");
-    chat.classList.add("d-none");
+    roomsMobile.classList.add("d-none");
     mod1lg.classList.add("d-none");
     modx.classList.add("d-none");
+
+    
 });
 
 home.addEventListener("click", ()=>{
@@ -62,14 +62,17 @@ home.addEventListener("click", ()=>{
     forumMobile.classList.remove("active");
     forum.classList.remove("active");
 
-    chat.classList.add("d-none");
     mod1lg.classList.add("d-none");
     modx.classList.add("d-none");
+    roomsMobile.classList.add("d-none");
     contenidoLg.classList.remove("d-none");
+
+    
 });
 //seccion modulos
 modsMobile.addEventListener("click", ()=>{
     modsMobile.classList.add("active");
+    modulos.classList.add("active");
     homeMobile.classList.remove("active");
     home.classList.remove("active");
     forumMobile.classList.remove("active");
@@ -77,14 +80,17 @@ modsMobile.addEventListener("click", ()=>{
 
     contenidoLg.classList.add("d-none");
     dropdownMobile.classList.remove("d-none");
-    chat.classList.add("d-none");
+    roomsMobile.classList.add("d-none");
     mod1lg.classList.add("d-none");
     modx.classList.add("d-none");
+
+    
 });
 
 ini.forEach(btn => {
     btn.addEventListener("click",()=>{
         modsMobile.classList.add("active");
+        modulos.classList.add("active");
         homeMobile.classList.remove("active");
         home.classList.remove("active");
         forumMobile.classList.remove("active");
@@ -92,16 +98,18 @@ ini.forEach(btn => {
         
         dropdownMobile.classList.add("d-none");
         contenidoLg.classList.add("d-none");
-        chat.classList.add("d-none");
-
+        roomsMobile.classList.add("d-none");
         mod1lg.classList.remove("d-none");
         modx.classList.add("d-none");
+
+        
     });
 });
 
 avan.forEach(btn =>{
     btn.addEventListener("click",()=>{
         modsMobile.classList.add("active");
+        modulos.classList.add("active");
         homeMobile.classList.remove("active");
         home.classList.remove("active");
         forumMobile.classList.remove("active");
@@ -109,16 +117,19 @@ avan.forEach(btn =>{
 
         dropdownMobile.classList.add("d-none");
         contenidoLg.classList.add("d-none");
-        chat.classList.add("d-none");
 
+        roomsMobile.classList.add("d-none");
         mod1lg.classList.add("d-none");
         modx.classList.remove("d-none");
+
+        
     });
 });
 
 cont.forEach(btn =>{
     btn.addEventListener("click",()=>{
         modsMobile.classList.add("active");
+        modulos.classList.add("active");
         homeMobile.classList.remove("active");
         home.classList.remove("active");
         forumMobile.classList.remove("active");
@@ -126,16 +137,19 @@ cont.forEach(btn =>{
 
         dropdownMobile.classList.add("d-none");
         contenidoLg.classList.add("d-none");
-        chat.classList.add("d-none");
 
+        roomsMobile.classList.add("d-none");
         mod1lg.classList.add("d-none");
         modx.classList.remove("d-none");
+
+        
     });
 });
 
 sueldos.forEach(btn =>{
     btn.addEventListener("click",()=>{
         modsMobile.classList.add("active");
+        modulos.classList.add("active");
         homeMobile.classList.remove("active");
         home.classList.remove("active");
         forumMobile.classList.remove("active");
@@ -143,15 +157,17 @@ sueldos.forEach(btn =>{
 
         dropdownMobile.classList.add("d-none");
         contenidoLg.classList.add("d-none");
-        chat.classList.add("d-none");
 
+        roomsMobile.classList.add("d-none");
         mod1lg.classList.add("d-none");
         modx.classList.remove("d-none");
+
+        
     });
 });
 
 //CHAT
-forumMobile.addEventListener("click", async ()=>{
+forumMobile.addEventListener("click", ()=>{
     modsMobile.classList.remove("active");
     modulos.classList.remove("active");
     homeMobile.classList.remove("active");
@@ -163,11 +179,12 @@ forumMobile.addEventListener("click", async ()=>{
     dropdownMobile.classList.add("d-none");
     mod1lg.classList.add("d-none");
     modx.classList.add("d-none");
-    await chat.classList.remove("d-none");
-    displayChat();    
+
+    roomsMobile.classList.remove("d-none");
+
 });
 
-forum.addEventListener("click", async ()=>{
+forum.addEventListener("click", ()=>{
     modsMobile.classList.remove("active");
     modulos.classList.remove("active");
     homeMobile.classList.remove("active");
@@ -176,72 +193,19 @@ forum.addEventListener("click", async ()=>{
     forum.classList.add("active");
 
     contenidoLg.classList.add("d-none");
+    dropdownMobile.classList.add("d-none");
     mod1lg.classList.add("d-none");
     modx.classList.add("d-none");
-    await chat.classList.remove("d-none");
-    displayChat();
-});
 
-async function displayChat(){
+    roomsMobile.classList.remove("d-none");
 
-    socket = io();
+})
 
-    messageForm.addEventListener("submit", e =>{
-        e.preventDefault();
-        let time = new Date();
-        let created_at = `${time.getDate()}/${time.getMonth()} ${time.getHours()}:${time.getMinutes()}`;
-    
-        if(message.value != ""){
-            socket.emit("send message", {message: message.value, user: user.innerText, fecha: created_at});
-        }
-        message.value = "";
-    })
-    
-    socket.on("new message", data =>{
-        displayMessage(data);
+selectForm.addEventListener("submit", ()=>{
+    rooms.forEach(option => {
+        option.setAttribute("value",`${option.innerText}`);
     });
-    
-    socket.on("load old messages", data =>{
-        if(chatBox.innerHTML == ""){
-            for (let i = 0; i < data.length; i++) {
-                displayMessage(data[i]);
-            }
-        }   
-    })
-}
-
-function displayMessage(data){
-    const msj = d.createElement("div");
-    msj.classList.add("w-45","rounded", "my-1", "px-1", "msj","animate");
-
-    if(data.user == user.innerText){
-        msj.classList.add("ms-auto");
-        msj.classList.replace("msj","msjAdmin");
-    }  
-    
-    if(data.user == "horarodriguezz" || data.user == "Cdora. B. Yesica" || data.user == "Cdor. R. R. Esteban"){
-        msj.innerHTML = `
-        <div class="d-flex" style="overflow-x: hidden;">
-        <p class="m-0 flex-grow-1"><strong>${data.user}</strong> <i class="fas fa-check-circle"></i></p>
-        <p class="m-0 text-muted fs-6">${data.fecha}</p>
-        </div>
-        <p class="m-0">${data.message}</p>`;
-
-        
-    }else{
-        msj.innerHTML = `
-        <div class="d-flex" style="overflow-x: hidden;">
-        <p class="m-0 flex-grow-1"><strong>${data.user}</strong></p>
-        <p class="m-0 text-muted fs-6">${data.fecha}</p>
-        </div>
-        <p class="m-0">${data.message}</p>`;
-        
-    }
-    
-    
-    chatBox.appendChild(msj);
-    chatBox.scrollTop = chatBox.scrollHeight;
-}
+})
 
 
 //logout

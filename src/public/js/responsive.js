@@ -14,7 +14,7 @@ const bcont = `<div class="row">
             <h6 class=" text-center text-decoration-underline">Asistente Contable - Inicial</h6>
             <p class="text-center">Te enseñamos todos los conocimientos fundamentales que un Contador necesita para que lo asistan de forma correcta durante su trabajo.</p>
             <div class="d-flex justify-content-center">
-                <button class="btn btn-outline-light" onclick="location.href='modulos.html'">Ver más</button>
+                <button class="btn btn-outline-light" onclick="location.href='/inicial'">Ver más</button>
             </div>
             
         </div>
@@ -29,7 +29,7 @@ const bcont = `<div class="row">
             <h6 class=" text-center text-decoration-underline">Asistente Contable - Avanzado</h6>
             <p class="text-center">Vamos un paso mas allá. Te enseñamos tareas mas avanzadas que puede hacer un asistente en la dinamica de un Estudio Contable.</p>
             <div class="d-flex justify-content-center">
-                <button class="btn btn-outline-dark" onclick="location.href='modulos.html'">Ver más</button>
+                <button class="btn btn-outline-dark" onclick="location.href='/avanzado'">Ver más</button>
             </div>
             
         </div>
@@ -44,7 +44,7 @@ const bcont = `<div class="row">
             <h6 class=" text-center text-decoration-underline">Modulo de Contabilidad</h6>
             <p class="text-center">Conocerás los procedimientos para hacer un balance desde la Apertura hasta el Balance de Presentación y armado de libros contables</p>
             <div class="d-flex justify-content-center">
-                <button class="btn btn-outline-light" onclick="location.href='modulos.html'">Ver más</button>
+                <button class="btn btn-outline-light" onclick="location.href='/contabilidad'">Ver más</button>
             </div>
             
         </div>
@@ -59,7 +59,7 @@ const bcont = `<div class="row">
             <h6 class=" text-center text-decoration-underline">Modulo de Sueldos</h6>
             <p class="text-center">Aprenderemos a confeccionar recibos de sueldos, liquidar cargas sociales y sindicales de cualquier convenio colectivo de trabajo</p>
             <div class="d-flex justify-content-center">
-                <button class="btn btn-outline-dark" onclick="location.href='modulos.html'">Ver más</a></button>
+                <button class="btn btn-outline-dark" onclick="location.href='/sueldos'">Ver más</a></button>
             </div>
             
         </div>
@@ -78,7 +78,7 @@ const mcont = `<h3 class="text-center">Ofrecemos un entrenamiento intensivo con 
                 <h6 class=" text-center text-decoration-underline">Asistente Contable - Inicial</h6>
                 <p class="text-center">Te enseñamos todos los conocimientos fundamentales que un Contador necesita para que lo asistan de forma correcta durante su trabajo.</p>
                 <div class="d-flex justify-content-center">
-                    <button class="btn btn-outline-light"><a class="text-decoration-none text-white" href="modulos.html">Ver más</a></button>
+                    <button class="btn btn-outline-light"><a class="text-decoration-none text-white" href="/inicial">Ver más</a></button>
                 </div>
             </div>
         </div>
@@ -92,7 +92,7 @@ const mcont = `<h3 class="text-center">Ofrecemos un entrenamiento intensivo con 
                 <h6 class=" text-center text-decoration-underline">Asistente Contable - Avanzado</h6>
                 <p class="text-center">Vamos un paso mas allá. Te enseñamos tareas mas avanzadas que puede hacer un asistente en la dinamica de un Estudio Contable.</p>
                 <div class="d-flex justify-content-center">
-                    <button class="btn btn-outline-dark"><a class="text-decoration-none text-dark" href="modulos.html">Ver más</a></button>
+                    <button class="btn btn-outline-dark"><a class="text-decoration-none text-dark" href="/avanzado">Ver más</a></button>
                 </div>
             </div>
         </div>
@@ -109,7 +109,7 @@ const mcont = `<h3 class="text-center">Ofrecemos un entrenamiento intensivo con 
                 <h6 class=" text-center text-decoration-underline">Modulo de Contabilidad</h6>
                 <p class="text-center">Conocerás los procedimientos para hacer un balance desde la Apertura hasta el Balance de Presentación y armado de libros contables</p>
                 <div class="d-flex justify-content-center">
-                    <button class="btn btn-outline-dark"><a class="text-decoration-none text-dark" href="modulos.html">Ver más</a></button>
+                    <button class="btn btn-outline-dark"><a class="text-decoration-none text-dark" href="/contabilidad">Ver más</a></button>
                 </div>
             </div>
         </div>
@@ -123,7 +123,7 @@ const mcont = `<h3 class="text-center">Ofrecemos un entrenamiento intensivo con 
                 <h6 class=" text-center text-decoration-underline">Modulo de Sueldos</h6>
                 <p class="text-center">Aprenderemos a confeccionar recibos de sueldos, liquidar cargas sociales y sindicales de cualquier convenio colectivo de trabajo</p>
                 <div class="d-flex justify-content-center">
-                    <button class="btn btn-outline-light"><a class="text-decoration-none text-white" href="modulos.html">Ver más</a></button>
+                    <button class="btn btn-outline-light"><a class="text-decoration-none text-white" href="/sueldos">Ver más</a></button>
                 </div>
             </div>
         </div>
@@ -132,7 +132,7 @@ const mcont = `<h3 class="text-center">Ofrecemos un entrenamiento intensivo con 
 
 const scont = `<h3 class="mx-auto mb-4 text-center">Ofrecemos un entrenamiento intensivo con practica REAL en Estudio Contable.</h3>
 <div class="card mx-5 mb-3 modulo" style="background-color: rgba(120, 111, 166, 1);">
-    <a href="./modulos.html" class="text-white text-decoration-none">
+    <a href="/modsMobile" class="text-white text-decoration-none">
         <div class="card-body" >
             <div class="d-flex justify-content-center">
                 <i class="fas fa-book fs-2 py-3" aria-hidden="true"></i>
@@ -143,7 +143,7 @@ const scont = `<h3 class="mx-auto mb-4 text-center">Ofrecemos un entrenamiento i
     </a>     
 </div>
 <div class="card border-secondary mx-5 mb-3 modulo">
-    <a href="./modulos.html" class="text-decoration-none text-dark">
+    <a href="/modsMobile" class="text-decoration-none text-dark">
         <div class="card-body">
             <div class="d-flex justify-content-center">
                 <i class="fas fa-graduation-cap fs-2 py-3" aria-hidden="true"></i>
@@ -154,7 +154,7 @@ const scont = `<h3 class="mx-auto mb-4 text-center">Ofrecemos un entrenamiento i
     </a>
 </div>
 <div class="card mx-5 mb-3 modulo" style="background-color: rgba(120, 111, 166, 1);">
-    <a href="./modulos.html" class="text-white text-decoration-none">
+    <a href="/modsMobile" class="text-white text-decoration-none">
         <div class="card-body">
             <div class="d-flex justify-content-center">
                 <i class="fas fa-calculator fs-2 py-3" aria-hidden="true"></i>
@@ -165,7 +165,7 @@ const scont = `<h3 class="mx-auto mb-4 text-center">Ofrecemos un entrenamiento i
     </a>
 </div>
 <div class="card border-secondary mx-5 modulo">
-    <a href="./modulos.html" class="text-decoration-none text-dark">
+    <a href="/modsMobile" class="text-decoration-none text-dark">
         <div class="card-body">
             <div class="d-flex justify-content-center">
                 <i class="fas fa-file-invoice-dollar fs-2 py-3" aria-hidden="true"></i>

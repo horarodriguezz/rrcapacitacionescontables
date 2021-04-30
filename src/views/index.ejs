@@ -18,7 +18,7 @@
         <!-- NAVBAR -->
         <nav class = "navbar navbar-expand-lg navbar-light fixed-top" style= "background-color: rgba(250, 250, 250, 1); z-index: 10;">
             <div class="container">
-                <a href="index.html" class="navbar-brand"><img src="img/logo esteban.PNG" class="me-2" style="height: 50px;"><img src="img/logo yesica.PNG" style="height: 50px;"></a>
+                <a href="/" class="navbar-brand"><img src="img/logo esteban.PNG" class="me-2" style="height: 50px;"><img src="img/logo yesica.PNG" style="height: 50px;"></a>
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -89,7 +89,7 @@
                                     </div>
                                     
                                     <div class="form-floating pb-3">
-                                        <input class="form-control" type="text" name="email" placeholder="Inserte un correo electronico." required>
+                                        <input class="form-control" type="email" name="email" placeholder="Inserte un correo electronico." required>
                                         <label for="email">E-mail</label>
                                     </div>
                                     <div class="form-floating pb-3">
@@ -133,11 +133,9 @@
                         
                     </div>
                 </div>
-                <% if(mailSendedMessage & mailSendedMessage.lenght > 0){ %>
-                <div class="alert alert-info">
-                    <p><%= mailSendedMessage %></p>
-                </div>
-                }<% }%>   
+                <% if(mailSendedMessage.length > 0){ %>
+                    <p class="alert alert-info"><%= mailSendedMessage %></p>
+                <% }%>   
             </div>
         </section>
     </footer>

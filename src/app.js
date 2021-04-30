@@ -36,18 +36,19 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use((req, res, next)=>{
-    app.locals.mailSendedMessage = req.flash("mailSendedMessage");
     app.locals.singInMessage = req.flash("singInMessage");
     app.locals.signupMessage = req.flash("signupMessage");
+    app.locals.mailSendedMessage = req.flash("mailSendedMessage");
     app.locals.user = req.user;
-
+    app.locals.modulo = req.flash("modulo");
+    app.locals.groupMessage = req.flash("groupMessage");
     next();
 });
 
 
 //routes
 app.use('/', require('./routes/index'));
-app.use(require("./routes/mail"));
+// app.use(require("./routes/mail"));
 app.use(express.static(path.join(__dirname,"public")));
 
 
