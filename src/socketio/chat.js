@@ -31,11 +31,11 @@ module.exports = function(io){
             newMessage.user = data.user;
             newMessage.message = data.message;
             newMessage.room = session.room;
-            newMessage.fecha = moment().format("HH:MM A");
+            newMessage.fecha = moment().subtract(2,"hours").format("HH:MM A");
 
             await newMessage.save();
 
-            io.to(session.room).emit("newMessage",data);
+            io.to(session.room).emit("newMessage", newMessage);
         });
 
         socket.on("disconnect",async ()=>{
