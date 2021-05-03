@@ -31,7 +31,7 @@ module.exports = function(io){
             newMessage.user = data.user;
             newMessage.message = data.message;
             newMessage.room = session.room;
-            newMessage.fecha = moment().utc().subtract(3,"hours").format("HH:MM A");
+            newMessage.fecha = moment().utcOffset(-3).format("HH:MM A");
 
             await newMessage.save();
 
