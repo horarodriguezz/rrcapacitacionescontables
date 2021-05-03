@@ -3,7 +3,6 @@ const rooms = require("../model/rooms");
 const moment = require("moment");
 
 
-
 module.exports = function(io){
     io.on("connection", async (socket) =>{
 
@@ -21,17 +20,18 @@ module.exports = function(io){
 
             socket.emit("load old messages", oldMessages);
 
-            socket.emit("userJoin",{user: "RR Capacitaciones Contables Bot", message:`Te has unido a la sala de ${userjoin.room}`, fecha: moment().format("HH:MM A") });
+            socket.emit("userJoin",{user: "RR Capacitaciones Contables Bot", message:`Te has unido a la sala de ${userjoin.room}`, fecha: moment().utcOffset("-03:00").format("HH:mm A")});
         });
 
         socket.on("sendMessage",async(data)=>{
             const session = await rooms.findOne({id: socket.id});
             const newMessage = new messageModel();
 
+
             newMessage.user = data.user;
             newMessage.message = data.message;
             newMessage.room = session.room;
-            newMessage.fecha = moment().utc();
+            newMessage.fecha = moment().utcOffset("-03:00").format("HH:mm A");
 
             await newMessage.save();
 
