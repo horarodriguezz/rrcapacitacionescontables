@@ -1,7 +1,15 @@
 # rrcapacitacionescontables
 
+(rrcapacitaciones.herokuapp.com)
+
 Proyecto de página web para un Estudio Contable en argentina que empieza a dar capacitaciones para el rubro.
-Contiene una landing page con un formulario de contacto por mail y una sección aparte. Cuenta con login autenticado por passport, el cual lleva 
-a un dashboard en el que se puede encontrar una presentación, un chat grupal con websockets y una sección de videos.
+
+Aplicación basada en nodejs + express. En el front HTML, CSS + Bootstrap, Javascript vanilla.
+
+En la pagina principal hay un formulario de contacto que envia un mail al email del Estudio.
+
+Login y autenticación con passport. Base de datos MongoDB.
+
+Chat con salas desarrollado con socket.io
 
 # Rodriguez Horacio

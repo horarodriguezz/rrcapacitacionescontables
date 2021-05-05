@@ -210,9 +210,9 @@ selectForm.addEventListener("submit", ()=>{
 
 //logout
 out.addEventListener("click",()=>{
-    location.href = "http://localhost:3000/logout"
+    location.href = "/logout";
 });
 outMobile.addEventListener("click",()=>{
-    location.href = "http://localhost:3000/logout"
+    location.href = "/logout";
 });
 
